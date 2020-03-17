@@ -1,6 +1,8 @@
 # ICB1920AS1
 MIMUW 19/20 Introduction to Computational Biology Assignment 1
 
+Coronavirus phylogeny
+
 As we are spending our time in quarantine, I thought we might try and consider reconstructing some phylogenetic trees that will tell us something about the evolutionary history of the coronavirus 2019-nCov. In particular, we will try and replicate (not completely, but the general idea) the panels b and c from Figure 2 in this paper:Identification_of_a_novel_coronavirus . The idea is to create and compare two phylogenetic trees created from the whole genome sequence of the coronavirus and from its spike protein (you might read more about spike proteins in this article, back from the previous SARS epidemic).
 
 Our goal will be to write a script that creates these two plots using the following steps:

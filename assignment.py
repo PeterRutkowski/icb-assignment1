@@ -40,21 +40,25 @@ def genome_sequence_import(query):
 def genome_sequence_import2(genomes, spikes):
     #searching for coronavirus sequence
     print()
+    g = []
     for i in range(len(genomes)):
         handle=Entrez.efetch(db="nucleotide",id=genomes[i],rettype="fasta")
         genome=SeqIO.read(handle,"fasta")
         print(genome.description, len(genome.seq))
+        g.append(genome)
         #print(genome.seq)
 
     print()
+    s = []
     for i in range(len(spikes)):
         spike_handle=Entrez.efetch(db="protein",id=spikes[i],rettype="fasta")
         spike=SeqIO.read(spike_handle,"fasta")
-
         print(spike.description, len(spike.seq))
+        s.append(spike)
+
     #print(spike_ncov19.seq)
     print()
-    #return [ncov19.seq, spike_ncov19.seq]
+    return g, s
 
 query_list = ['2019-nCov','SARS 2002', 'bat coronavirus', 'MERS', 'influenza A', 'hepatitis A']
 genomes = [1821109035, 292660135, 1180422623, 1386872249, 1820140354, 1812620187]
@@ -64,9 +68,12 @@ genetic_codes = []
 
 #genetic_codes.append(genome_sequence_import('hepatitis a'))
 
-genome_sequence_import2(genomes, spikes)
+g, s = genome_sequence_import2(genomes, spikes)
 
 #for query in query_list:
 #    genetic_codes.append(genome_sequence_import(query))
+
+SeqIO.write(g, 'g.fasta', 'fasta')
+SeqIO.write(s, 's.fasta', 'fasta')
 
 

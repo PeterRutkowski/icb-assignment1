@@ -1,4 +1,5 @@
 from Bio.Align.Applications import ClustalwCommandline
-in_file = "test.fasta"
-clustalw_cline = ClustalwCommandline("clustalw2", infile=in_file, align=1)
-print(clustalw_cline)
+cline = ClustalwCommandline("clustalw2", infile="test.fasta")
+from Bio import AlignIO
+align = AlignIO.read("data/opuntia.aln", "clustal")
+print(align)

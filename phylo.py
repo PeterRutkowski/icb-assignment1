@@ -4,7 +4,8 @@ from Bio.Phylo.TreeConstruction import DistanceTreeConstructor
 from Bio.Phylo import draw_ascii, draw
 import matplotlib.pyplot as plt
 
-labels = ['SARS-CoV-2','Bat SARS CoV HKU3-4', 'Bat CoV', 'MERS-CoV', 'Influenza A', 'Duck hepatitis A DHAV-3']
+labels = ['SARS-CoV-2','Bat SARS CoV HKU3-4', 'Bat CoV', 'MERS-CoV',
+          'Influenza A', 'Duck hepatitis A\n        DHAV-3']
 
 spike_protein_dna = AlignIO.read("s_out.fasta", "fasta")
 genome_dna = AlignIO.read("g_out.fasta", "fasta")
@@ -41,9 +42,10 @@ def plot_tree(tree, title, output_file):
     ax.spines['right'].set_visible(False)
     ax.spines['bottom'].set_visible(False)
     ax.spines['left'].set_visible(False)
-
+    plt.gcf().subplots_adjust(right=0.99, left=0.01, top=0.9, bottom=0.1)
     plt.suptitle(title)
-    plt.axis('off')
+    plt.yticks([])
+    plt.ylabel('')
     plt.savefig(output_file, dpi=450)
 
     plt.close(fig)

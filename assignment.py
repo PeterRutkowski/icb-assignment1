@@ -1,79 +1,49 @@
-# identifying ourselves to the Entrez database
+import os
 from Bio import Entrez
 from Bio import SeqIO
-from Bio.Align.Applications import ClustalwCommandline
-import numpy as np
+
 Entrez.email = "piotrrutkowski97@gmail.com"
 
-def genome_sequence_import(query):
-    #searching for coronavirus sequence
-    handle=Entrez.esearch(db="nuccore",term=query)
-    rec=Entrez.read(handle)
-    # now we have the search results in a dictionary, we can take the list of sequence IDs
-    rec["IdList"]
-    #print(rec["IdList"])
-    print()
-    for i in range(len(rec["IdList"])):
-        #we can fetch the first one - the whole genome sequence
-        rec_handle=Entrez.efetch(db="nucleotide",id=rec["IdList"][i],rettype="fasta")
+def import_dna_from_db(genome_db_codes, spike_protein_db_codes):
 
-        # now we have the handle, we need to read the fasta file from it
+    genome_dna = []
+    for i in range(len(genome_db_codes)):
+        genome_handle = Entrez.efetch(db="nucleotide",id=genome_db_codes[i],rettype="fasta")
+        genome = SeqIO.read(genome_handle,"fasta")
+        genome_dna.append(genome)
 
-        ncov19=SeqIO.read(rec_handle,"fasta")
+        print(genome.description)
+        if i == len(genome_db_codes) - 1:
+            print()
 
-        print(ncov19.description, len(ncov19.seq), rec["IdList"][i])
-    #print(ncov19.seq)
+    spike_protein_dna = []
+    for i in range(len(spike_protein_db_codes)):
+        spike_protein_handle = Entrez.efetch(db="protein",id=spike_protein_db_codes[i],rettype="fasta")
+        spike_protein = SeqIO.read(spike_protein_handle,"fasta")
+        spike_protein_dna.append(spike_protein)
 
-    # now we will do the same for the spike protein
-    handle=Entrez.esearch(db="protein",term=query)
-    spike_rec=Entrez.read(handle)
-    print()
-    for i in range(len(spike_rec["IdList"])):
-        spike_handle=Entrez.efetch(db="protein",id=spike_rec["IdList"][i],rettype="fasta")
-        spike_ncov19=SeqIO.read(spike_handle,"fasta")
+        print(spike_protein.description)
+        if i == len(spike_protein_db_codes) - 1:
+            print()
 
-        print(spike_ncov19.description, len(spike_ncov19.seq), spike_rec["IdList"][i])
-    #print(spike_ncov19.seq)
-    print()
-    return [ncov19.seq, spike_ncov19.seq]
+    # save dna codes imported from database
+    SeqIO.write(genome_dna, 'genome_dna.fasta', 'fasta')
+    SeqIO.write(spike_protein_dna, 'spike_protein_dna.fasta', 'fasta')
 
-def genome_sequence_import2(genomes, spikes):
-    #searching for coronavirus sequence
-    print()
-    g = []
-    for i in range(len(genomes)):
-        handle=Entrez.efetch(db="nucleotide",id=genomes[i],rettype="fasta")
-        genome=SeqIO.read(handle,"fasta")
-        print(genome.description, len(genome.seq))
-        g.append(genome)
-        #print(genome.seq)
+# respective database codes for: SARS-CoV-2, Bat SARS CoV HKU3-4,
+# Bat CoV, MERS-CoV, Influenza A, Duck hepatitis A DHAV-3
+genome_db_codes = [1821109035, 292660135, 1180422623, 1386872249, 1820140354, 1812620187]
+spike_protein_db_codes = [1812779093, 292660137, 1179780473, 1386872252, 1820506005, 1812620188]
 
-    print()
-    s = []
-    for i in range(len(spikes)):
-        spike_handle=Entrez.efetch(db="protein",id=spikes[i],rettype="fasta")
-        spike=SeqIO.read(spike_handle,"fasta")
-        print(spike.description, len(spike.seq))
-        s.append(spike)
+import_dna_from_db(genome_db_codes, spike_protein_db_codes)
 
-    #print(spike_ncov19.seq)
-    print()
-    return g, s
 
-query_list = ['SARS-CoV-2','Bat SARS CoV HKU3-4', 'Bat CoV', 'MERS-CoV', 'Influenza A', 'Duck hepatitis A DHAV-3']
-genomes = [1821109035, 292660135, 1180422623, 1386872249, 1820140354, 1812620187]
-spikes = [1812779093, 292660137, 1179780473, 1386872252, 1820506005, 1812620188] # last two may be wrong
 
-genetic_codes = []
+# multiple sequence alignment using clustalo
+input_files = ['genome_dna.fasta', 'spike_protein_dna.fasta']
+output_files = ['genome_multiple_seq_alignment.fasta', 'spike_protein_multiple_seq_alignment.fasta']
 
-#genetic_codes.append(genome_sequence_import('hepatitis a'))
-
-g, s = genome_sequence_import2(genomes, spikes)
-
-#for query in query_list:
-#    genetic_codes.append(genome_sequence_import(query))
-
-SeqIO.write(g, 'g.fasta', 'fasta')
-SeqIO.write(s, 's.fasta', 'fasta')
+for i in range(len(input_files)):
+    os.system('clustalo -i ' + input_files[i] + ' -o ' + output_files[i] + ' --force')
 
 

@@ -1,6 +1,7 @@
 # identifying ourselves to the Entrez database
 from Bio import Entrez
 from Bio import SeqIO
+from Bio.Align.Applications import ClustalwCommandline
 import numpy as np
 Entrez.email = "piotrrutkowski97@gmail.com"
 
@@ -62,7 +63,9 @@ spikes = [1812779093, 292660137, 1179780473, 1386872252, 1820506005, 1812620188]
 genetic_codes = []
 
 #genetic_codes.append(genome_sequence_import('hepatitis a'))
+
 genome_sequence_import2(genomes, spikes)
+
 #for query in query_list:
 #    genetic_codes.append(genome_sequence_import(query))
 

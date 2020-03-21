@@ -25,26 +25,15 @@ spike_protein_upgma_tree = constructor.upgma(spike_protein_dm)
 genome_nj_tree = constructor.nj(genome_dm)
 genome_upgma_tree = constructor.upgma(genome_dm)
 
-#print('\n\n')
-#print('Spike protein NJ tree')
-#draw_ascii(spike_protein_nj_tree)
-#print('\n\n')
-#print('Genome NJ tree')
-#draw_ascii(genome_nj_tree)
-#print('\n\n')
-#print('Spike protein UPGMA tree')
-#draw_ascii(spike_protein_upgma_tree)
-#print('\n\n')
-#print('Genome UPGMA tree')
-#draw_ascii(genome_upgma_tree)
-#print('\n\n')
-
 def plot_tree(tree, title, output_file):
+    for clade in tree.find_clades():
+        if clade.name[0:5] == 'Inner':
+            clade.name = ''
+
     fig, ax = plt.subplots()
 
     axes = fig.add_subplot(1, 1, 1)
     fig = draw(tree, axes = axes, do_show=0)
-    plt.tight_layout()
 
     ax.get_xaxis().set_ticks([])
     ax.get_yaxis().set_ticks([])

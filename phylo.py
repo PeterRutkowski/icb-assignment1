@@ -6,17 +6,27 @@ import numpy as np
 
 labels = ['SARS-CoV-2','SARS', 'bat coronavirus', 'MERS', 'influenza A', 'hepatitis A']
 
-spike_proteins = AlignIO.read("s_out.fasta", "fasta")
+spike_protein_dna = AlignIO.read("s_out.fasta", "fasta")
+genome_dna = AlignIO.read("g_out.fasta", "fasta")
 
-ids = []
-for i in range(len(spike_proteins)):
-    spike_proteins[i].id = labels[i]
-
-
+for i in range(len(spike_protein_dna)):
+    spike_protein_dna[i].id = labels[i]
+    genome_dna[i].id = labels[i]
 
 calculator = DistanceCalculator('blosum62')
-dm = calculator.get_distance(spike_proteins)
+
+spike_protein_dm = calculator.get_distance(spike_protein_dna)
+genome_dm = calculator.get_distance(genome_dna)
+
 constructor = DistanceTreeConstructor()
-njtree = constructor.nj(dm)
+
+spike_protein_njtree = constructor.nj(spike_protein_dm)
+genome_njtree = constructor.nj(genome_dm)
+
 print('\n\n')
-draw_ascii(njtree)
+print('Spike protein NJ tree')
+draw_ascii(spike_protein_njtree)
+print('\n\n')
+print('Genome NJ tree')
+draw_ascii(genome_njtree)
+print('\n\n')

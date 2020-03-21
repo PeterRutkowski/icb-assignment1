@@ -60,7 +60,7 @@ def genome_sequence_import2(genomes, spikes):
     print()
     return g, s
 
-query_list = ['2019-nCov','SARS 2002', 'bat coronavirus', 'MERS', 'influenza A', 'hepatitis A']
+query_list = ['SARS-CoV-2','SARS', 'bat coronavirus', 'MERS', 'influenza A', 'hepatitis A']
 genomes = [1821109035, 292660135, 1180422623, 1386872249, 1820140354, 1812620187]
 spikes = [1812779093, 292660137, 1179780473, 1386872252, 1820506005, 1812620188] # last two may be wrong
 

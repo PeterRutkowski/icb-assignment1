@@ -38,7 +38,7 @@ import_dna_from_db(genome_db_codes, spike_protein_db_codes)
 # multiple sequence alignment using clustalo
 print('\nExecuting multiple sequence alignment...\n')
 input_files = ['genome_dna.fasta', 'spike_protein_dna.fasta']
-output_files = ['genome_multiple_seq_alignment.fasta', 'spike_protein_multiple_seq_alignment.fasta']
+output_files = ['genome_dna_aligned.fasta', 'spike_protein_dna_aligned.fasta']
 
 for i in range(len(input_files)):
     os.system('clustalo -i ' + input_files[i] + ' -o ' + output_files[i] + ' --force')

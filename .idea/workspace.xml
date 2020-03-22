@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5e7652e-7a82-4f26-9194-00717db83d06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiple_sequence_alignment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/g.fasta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/g_out.fasta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/multiple_sequence_alignment.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiple_sequence_alignment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s.fasta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s_out.fasta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spike_protein_nj_tree.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/multiple_sequence_alignment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="159">
+              <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -63,6 +68,7 @@
         <option value="$PROJECT_DIR$/test.fasta" />
         <option value="$PROJECT_DIR$/phylo.py" />
         <option value="$PROJECT_DIR$/assignment.py" />
+        <option value="$PROJECT_DIR$/multiple_sequence_alignment.py" />
       </list>
     </option>
   </component>
@@ -108,7 +114,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.phylo">
+  <component name="RunManager" selected="Python.peterR4">
     <configuration name="peterR4" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ICB1920AS1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -195,8 +201,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.phylo" />
         <item itemvalue="Python.peterR4" />
+        <item itemvalue="Python.phylo" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.sketch" />
       </list>
@@ -219,12 +225,12 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21084337" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5879518" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -341,8 +347,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/multiple_sequence_alignment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="159">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

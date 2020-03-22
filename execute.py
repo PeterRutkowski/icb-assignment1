@@ -7,7 +7,7 @@ from Bio.Phylo.TreeConstruction import DistanceTreeConstructor
 from Bio.Phylo import draw
 import matplotlib.pyplot as plt
 
-Entrez.email = "piotrrutkowski97@gmail.com"
+Entrez.email = "pr386097@students.mimuw.edu.pl"
 
 def import_dna_from_db(genome_db_codes, spike_protein_db_codes):
     # write given database entries' dna codes to fasta files

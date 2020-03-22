@@ -8,10 +8,14 @@ As we are spending our time in quarantine, I thought we might try and consider r
 Our goal will be to write a script that creates these two plots using the following steps:
 
 Downloading the sequences from Entrez using Bio.Entrez (2 pts)
+
 Creating multiple alignments of both DNA (whole genome) and protein (spike protein) sequences (3 pts)
+
 Creating phylogenetic trees for both protein and genome alignments using the UPGMA and neighbor joining algorithms (3pts)
+
 Visualizing the trees (1 pt)
-Now let us describe all these steps in more detail
+
+Now let us describe all these steps in more detail:
 
 1. We need to download whole genome sequences and spike protein sequences from the Genbank Entrez databases (“nucleotide” and “protein” databases, respectively), together with some other viruses. We will only look at 6 species:
 

@@ -1,9 +1,6 @@
 import os
-from Bio import Entrez
-from Bio import SeqIO
-from Bio import AlignIO
-from Bio.Phylo.TreeConstruction import DistanceCalculator
-from Bio.Phylo.TreeConstruction import DistanceTreeConstructor
+from Bio import Entrez, SeqIO, AlignIO
+from Bio.Phylo.TreeConstruction import DistanceCalculator, DistanceTreeConstructor
 from Bio.Phylo import draw
 import matplotlib.pyplot as plt
 

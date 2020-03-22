@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f5e7652e-7a82-4f26-9194-00717db83d06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiple_sequence_alignment.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiple_sequence_alignment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phylo.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_trees.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multiple_sequence_alignment.py" beforeDir="false" afterPath="$PROJECT_DIR$/execute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot_trees.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,12 +15,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plot_trees.py">
+        <entry file="file://$PROJECT_DIR$/execute.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="73" lean-forward="true" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+            <state relative-caret-position="146">
+              <caret line="64" column="43" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,9 +51,10 @@
         <option value="$PROJECT_DIR$/scratch.py" />
         <option value="$PROJECT_DIR$/test.fasta" />
         <option value="$PROJECT_DIR$/assignment.py" />
-        <option value="$PROJECT_DIR$/multiple_sequence_alignment.py" />
         <option value="$PROJECT_DIR$/phylo.py" />
         <option value="$PROJECT_DIR$/plot_trees.py" />
+        <option value="$PROJECT_DIR$/multiple_sequence_alignment.py" />
+        <option value="$PROJECT_DIR$/execute.py" />
       </list>
     </option>
   </component>
@@ -99,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.phylo">
+  <component name="RunManager" selected="Python.peterR4">
     <configuration name="peterR4" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ICB1920AS1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,7 +113,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/multiple_sequence_alignment.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/execute.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -186,8 +187,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.phylo" />
         <item itemvalue="Python.peterR4" />
+        <item itemvalue="Python.phylo" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.sketch" />
       </list>
@@ -215,7 +216,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20361446" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.55903614" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -323,22 +324,15 @@
     <entry file="file://$PROJECT_DIR$/genome_multiple_seq_alignment.fasta">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/multiple_sequence_alignment.py">
+    <entry file="file://$PROJECT_DIR$/plot_trees.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/execute.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+        <state relative-caret-position="146">
+          <caret line="64" column="43" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plot_trees.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="73" lean-forward="true" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>

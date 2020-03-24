@@ -6,9 +6,15 @@ import matplotlib.pyplot as plt
 
 Entrez.email = "pr386097@students.mimuw.edu.pl"
 
-def import_dna_from_db(genome_db_codes, spike_protein_db_codes):
+def entrez_import():
     # write given database entries' dna codes to fasta files
-    print('\nImporting following genomes:\n')
+
+    # respective database codes for: SARS-CoV-2, Bat SARS CoV HKU3-4,
+    # Bat CoV, MERS-CoV, Murine Hepatitis Virus
+    genome_db_codes = [1821109035, 292660135, 1189488873, 1386872249, 1268318180]
+    spike_protein_db_codes = [1812779093, 292660137, 1023043585, 1386872252, 1825483]
+
+    print('\nImporting following DNA codes...\n')
 
     genome_dna = []
     for i in range(len(genome_db_codes)):
@@ -17,7 +23,22 @@ def import_dna_from_db(genome_db_codes, spike_protein_db_codes):
         genome_dna.append(genome)
         print(genome.description)
 
-    print('\nImporting following spike proteins:\n')
+    # import additional Influenza A genome which is stored in 8 segments
+    influenza_segments_codes = [310699718, 310699715, 310699713, 310699701, 310699708, 310699706, 310699703, 310699710]
+
+    for i in range(len(influenza_segments_codes)):
+        influenza_handle = Entrez.efetch(db="nucleotide", id=influenza_segments_codes[i], rettype="fasta")
+        influenza_segment = SeqIO.read(influenza_handle, "fasta")
+        if i == 0:
+            genome = influenza_segment
+            genome.id = 'Influenza A Virus'
+        else:
+            genome.seq = genome.seq + influenza_segment.seq
+
+    print(genome.description)
+    genome_dna.append(genome)
+
+    print()
 
     spike_protein_dna = []
     for i in range(len(spike_protein_db_codes)):
@@ -30,15 +51,10 @@ def import_dna_from_db(genome_db_codes, spike_protein_db_codes):
     SeqIO.write(genome_dna, 'data/genome_dna.fasta', 'fasta')
     SeqIO.write(spike_protein_dna, 'data/spike_protein_dna.fasta', 'fasta')
 
-# respective database codes for: SARS-CoV-2, Bat SARS CoV HKU3-4,
-# Bat CoV, MERS-CoV, Influenza A, Duck hepatitis A DHAV-3
-genome_db_codes = [1821109035, 292660135, 1180422623, 1386872249, 1820140354, 1812620187]
-spike_protein_db_codes = [1812779093, 292660137, 1179780473, 1386872252, 1820506005, 1812620188]
-
-import_dna_from_db(genome_db_codes, spike_protein_db_codes)
+entrez_import()
 
 # multiple sequence alignment using clustalo
-print('\nExecuting multiple sequence alignment...\n')
+print('Executing multiple sequence alignment...\n')
 input_files = ['data/genome_dna.fasta', 'data/spike_protein_dna.fasta']
 output_files = ['data/genome_dna_aligned.fasta', 'data/spike_protein_dna_aligned.fasta']
 
@@ -51,12 +67,12 @@ genome_dna = AlignIO.read("data/genome_dna_aligned.fasta", "fasta")
 
 # virus names for tree labels
 viruses = ['SARS-CoV-2','Bat SARS CoV\n      HKU3-4', 'Bat CoV', 'MERS-CoV',
-          'Influenza A', 'Duck hepatitis A\n        DHAV-3']
+          'Murine Hepatitis Virus', 'Influenza A']
 
 # change virus codes to virus labels in the data
-for i in range(len(spike_protein_dna)):
-    spike_protein_dna[i].id = viruses[i]
+for i in range(0,5):
     genome_dna[i].id = viruses[i]
+    spike_protein_dna[i].id = viruses[i]
 
 # calculate distance matrices
 print('Calculating distance matrices...\n')
@@ -96,7 +112,7 @@ def plot_tree(tree, title, output_file):
     plt.yticks([])
     plt.ylabel('')
 
-    plt.savefig(output_file, dpi=450)
+    plt.savefig(output_file, dpi=200)
     plt.close(fig)
 
 # plot trees

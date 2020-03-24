@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ea7de9f-4ad5-4413-8ff2-af5f25f51c7c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/data/genome_dna.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/data/genome_dna.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/genome_dna_aligned.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/data/genome_dna_aligned.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/spike_protein_dna.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/data/spike_protein_dna.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/spike_protein_dna_aligned.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/data/spike_protein_dna_aligned.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/execute.py" beforeDir="false" afterPath="$PROJECT_DIR$/execute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/genome_tree_nj.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/genome_tree_nj.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/genome_tree_upgma.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/genome_tree_upgma.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spike_protein_tree_nj.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spike_protein_tree_nj.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/spike_protein_tree_upgma.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spike_protein_tree_upgma.png" afterDir="false" />
-    </list>
+    <list default="true" id="6ea7de9f-4ad5-4413-8ff2-af5f25f51c7c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

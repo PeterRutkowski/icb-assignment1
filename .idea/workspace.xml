@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ea7de9f-4ad5-4413-8ff2-af5f25f51c7c" name="Default Changelist" comment="" />
+    <list default="true" id="6ea7de9f-4ad5-4413-8ff2-af5f25f51c7c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/spike_protein_dna.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/data/spike_protein_dna.fasta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/spike_protein_dna_aligned.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/data/spike_protein_dna_aligned.fasta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/execute.py" beforeDir="false" afterPath="$PROJECT_DIR$/execute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/spike_protein_tree_nj.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spike_protein_tree_nj.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/spike_protein_tree_upgma.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/spike_protein_tree_upgma.png" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/execute.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="268">
+              <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -130,7 +137,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6506024" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35903615" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -143,8 +150,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/execute.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="268">
+          <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

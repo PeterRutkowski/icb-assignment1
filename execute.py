@@ -12,7 +12,7 @@ def entrez_import():
     # respective database codes for: SARS-CoV-2, Bat SARS CoV HKU3-4,
     # Bat CoV, MERS-CoV, Murine Hepatitis Virus
     genome_db_codes = [1821109035, 292660135, 1189488873, 1386872249, 1268318180]
-    spike_protein_db_codes = [1812779093, 292660137, 1023043585, 1386872252, 1825483]
+    spike_protein_db_codes = [1812779093, 292660137, 1023043585, 510937295, 1825483]
 
     print('\nImporting following DNA codes...\n')
 
@@ -21,7 +21,6 @@ def entrez_import():
         genome_handle = Entrez.efetch(db="nucleotide",id=genome_db_codes[i],rettype="fasta")
         genome = SeqIO.read(genome_handle,"fasta")
         genome_dna.append(genome)
-        print(genome.description)
 
     # import additional Influenza A genome which is stored in 8 segments
     influenza_segments_codes = [310699718, 310699715, 310699713, 310699701, 310699708, 310699706, 310699703, 310699710]
@@ -35,17 +34,13 @@ def entrez_import():
         else:
             genome.seq = genome.seq + influenza_segment.seq
 
-    print(genome.description)
     genome_dna.append(genome)
-
-    print()
 
     spike_protein_dna = []
     for i in range(len(spike_protein_db_codes)):
         spike_protein_handle = Entrez.efetch(db="protein",id=spike_protein_db_codes[i],rettype="fasta")
         spike_protein = SeqIO.read(spike_protein_handle,"fasta")
         spike_protein_dna.append(spike_protein)
-        print(spike_protein.description)
 
     # write imported dna codes to fasta files
     SeqIO.write(genome_dna, 'data/genome_dna.fasta', 'fasta')

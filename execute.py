@@ -62,7 +62,7 @@ genome_dna = AlignIO.read("data/genome_dna_aligned.fasta", "fasta")
 
 # virus names for tree labels
 viruses = ['SARS-CoV-2','Bat SARS CoV\n      HKU3-4', 'Bat CoV', 'MERS-CoV',
-          'Murine Hepatitis Virus', 'Influenza A']
+          'Murine Hepatitis\n          Virus', 'Influenza A']
 
 # change virus codes to virus labels in the data
 for i in range(0,5):
